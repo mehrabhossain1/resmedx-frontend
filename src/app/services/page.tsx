@@ -9,46 +9,56 @@ import Image from "next/image";
 
 const services = [
   {
-    title: "Research Consultancy (Online)",
-    price: "BDT 2,000",
-    duration: "One-hour session",
-    icon: img1, // Image for this service
+    category: "Research Consultancy (Online)",
+    image: img1,
+    details: [
+      {
+        description: "One-hour session",
+        price: "BDT 2000",
+      },
+    ],
   },
   {
-    title: "Protocol Services - Regular Package",
-    price: "BDT 17,000",
-    duration: "1 month",
-    icon: img2, // Image for this service
+    category: "Protocol Services",
+    image: img2,
+    details: [
+      {
+        description: "Regular package (1 month)",
+        price: "BDT 17,000",
+      },
+      {
+        description: "Fast package (2 weeks)",
+        price: "BDT 22,000",
+      },
+      {
+        description: "Superfast package (1 week)",
+        price: "BDT 30,000",
+      },
+    ],
   },
   {
-    title: "Protocol Services - Fast Package",
-    price: "BDT 22,000",
-    duration: "2 weeks",
-    icon: img3, // Image for this service
+    category: "FCPS/MD/MS Thesis Services",
+    image: img3,
+    details: [
+      {
+        description: "Regular package (1 month)",
+        price: "BDT 33,000",
+      },
+      {
+        description: "Fast package (2 weeks)",
+        price: "BDT 38,000",
+      },
+    ],
   },
   {
-    title: "Protocol Services - Superfast Package",
-    price: "BDT 30,000",
-    duration: "1 week",
-    icon: img4, // Image for this service
-  },
-  {
-    title: "FCPS/MD/MS Thesis Services - Regular Package",
-    price: "BDT 33,000",
-    duration: "1 month",
-    icon: img5, // Image for this service
-  },
-  {
-    title: "FCPS/MD/MS Thesis Services - Fast Package",
-    price: "BDT 38,000",
-    duration: "2 weeks",
-    icon: img6, // Image for this service
-  },
-  {
-    title: "Data Collection Service for Thesis",
-    price: "Additional BDT 15,000",
-    duration: "",
-    icon: img7, // Image for this service
+    category: "Data Collection Service for Thesis",
+    image: img4, // Assuming img4 is imported for this service
+    details: [
+      {
+        description: "Additional charge",
+        price: "BDT 15,000",
+      },
+    ],
   },
 ];
 
@@ -68,25 +78,28 @@ const ServicesPage = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="flex items-center bg-white border border-gray-200 rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300"
+            className="flex flex-col md:flex-row items-center border-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-            <div className="flex-shrink-0">
+            <div className="md:w-1/2 mb-6 md:mb-0">
               <Image
-                src={service.icon}
-                alt={`${service.title} icon`}
-                className="w-32 h-32 rounded-lg"
+                src={service.image}
+                alt={service.category}
+                className="rounded-lg shadow-lg"
+                width={500}
+                height={300}
+                objectFit="cover"
               />
             </div>
-            <div className="ml-8">
-              <h2 className="text-4xl font-semibold mb-2 text-gray-600">
-                {service.title}
+            <div className="md:w-1/2 md:pl-6 text-center md:text-left">
+              <h2 className="text-2xl font-semibold mb-4">
+                {service.category}
               </h2>
-              <p className="text-gray-800 mb-1 text-2xl font-semibold">
-                {service.price}
-              </p>
-              {service.duration && (
-                <p className="text-gray-500">Duration: {service.duration}</p>
-              )}
+              {service.details.map((detail, idx) => (
+                <div key={idx} className="mb-2">
+                  <p className="text-gray-400">{detail.description}</p>
+                  <p className="text-blue-500 font-semibold">{detail.price}</p>
+                </div>
+              ))}
             </div>
           </div>
         ))}
