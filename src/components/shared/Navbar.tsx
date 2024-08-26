@@ -17,7 +17,7 @@ const Navbar = () => {
       setIsLoggedIn(true);
     } else {
       setIsLoggedIn(false);
-      router.push("/auth/login");
+      router.push("/");
     }
   }, [router]);
 
@@ -29,7 +29,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar h-20 font-semibold text-gray-600 bg-[#D9D9D9]">
+    <div className="navbar h-20 font-semibold text-gray-600">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -73,7 +73,7 @@ const Navbar = () => {
           height={60}
           className="rounded-full"
         />
-        <p className="ml-2 text-xl font-bold">RESMEDSX</p>
+        <p className="ml-2 text-xl font-bold">RESMEDX</p>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">

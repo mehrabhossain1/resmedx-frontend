@@ -67,7 +67,7 @@ const ServicesPage = () => {
     <div className="py-16">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold">
-          OUR <span className="text-blue-500">SERVICE</span>
+          OUR <span className="text-primary">SERVICE</span>
         </h1>
         <p className="text-gray-500 mt-4">
           We offer a variety of services to meet your research and academic
@@ -97,7 +97,7 @@ const ServicesPage = () => {
               {service.details.map((detail, idx) => (
                 <div key={idx} className="mb-2">
                   <p className="text-gray-400">{detail.description}</p>
-                  <p className="text-blue-500 font-semibold">{detail.price}</p>
+                  <p className="text-primary font-semibold">{detail.price}</p>
                 </div>
               ))}
             </div>

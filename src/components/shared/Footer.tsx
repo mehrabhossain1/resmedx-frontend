@@ -3,8 +3,8 @@ import logo from "@/assets/logo1.jpg";
 
 const Footer = () => {
   return (
-    <footer className="footer bg-[#D9D9D9] text-gray-800 p-10 grid grid-cols-3 mx-auto mt-20">
-      <aside>
+    <footer className="footer bg-[#D9D9D9] text-gray-800 p-4 sm:p-10 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-10 mx-auto mt-10 sm:mt-20">
+      <aside className="flex justify-center">
         <Image
           src={logo}
           alt="Logo"
@@ -13,9 +13,9 @@ const Footer = () => {
           className="rounded-full"
         />
       </aside>
-      <nav>
-        <h6 className="footer-title">Connect With Us</h6>
-        <div className="grid grid-flow-col gap-4">
+      <nav className="flex flex-col items-center sm:items-start">
+        <h6 className="footer-title mb-2">Connect With Us</h6>
+        <div className="flex gap-4">
           <a
             href="https://www.facebook.com/people/Resmedx-BD/61564358981965"
             target="_blank"
@@ -62,10 +62,10 @@ const Footer = () => {
                 y2="49.954"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0" stop-color="#4b4b4b"></stop>
-                <stop offset=".247" stop-color="#3e3e3e"></stop>
-                <stop offset=".686" stop-color="#2b2b2b"></stop>
-                <stop offset="1" stop-color="#252525"></stop>
+                <stop offset="0" stopColor="#4b4b4b"></stop>
+                <stop offset=".247" stopColor="#3e3e3e"></stop>
+                <stop offset=".686" stopColor="#2b2b2b"></stop>
+                <stop offset="1" stopColor="#252525"></stop>
               </linearGradient>
               <path
                 fill="url(#U8Yg0Q5gzpRbQDBSnSCfPa_yoQabS8l0qpr_gr1)"
@@ -88,11 +88,11 @@ const Footer = () => {
         </div>
       </nav>
 
-      <nav>
-        <h6 className="footer-title">Contact With Us</h6>
+      <nav className="flex flex-col items-center sm:items-end">
+        <h6 className="footer-title mb-2">Contact With Us</h6>
         <a
           href="mailto:Contact@resmedx.com"
-          className="hover:underline cursor-pointer font-semibold"
+          className="hover:underline cursor-pointer font-semibold text-center sm:text-right"
         >
           Contact@resmedx.com
         </a>
